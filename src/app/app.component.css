@@ -1,0 +1,45 @@
+.company-site-container {
+  background-color: #E4E4E4;
+  padding: 3rem;
+  height: max-content;
+}
+
+.header-company {
+  height: 20%;
+}
+
+.company-name {
+  margin-top: 5rem;
+  margin-left: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.property-text {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.property-text-block {
+  margin-bottom: 2rem;
+}
+
+.technology-text-block {
+  margin-bottom: 3rem;
+}
+
+.description-text-block {
+  margin-left: 0.8rem;
+}
+
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 2rem;
+}
+
+.child {
+  flex: 1 0 15%;
+  margin: 1rem;
+}

@@ -1,26 +1,86 @@
-<div class="container">
-  <div class="header">
-    COMPANY NAME
-  </div>
-  <div class="body">
-    <div class="main_info">
-      <div>PROJECT NAME: <span id="project_name">Name</span></div>
-      <div>DOMAIN: <span id="domain">Domain</span></div>
-      <div>PROJECT MANAGER: <span id="project_manager">Manager</span></div>
-      <div>TEAM LEAD: <span id="project_manager">Lead</span></div>
-    </div>
-    <div class="detailed_info">
-      <div>MAIN TECHNOLOGY: <span id="main_technology">Main technology</span></div>
-      <div>ADDITIONAL TECHNOLOGIES USED: <span id="additional_technologies">
-          <ul>
-            <li>Technology</li>
-          </ul>
-        </span></div>
-      <div>DESCRIPTION: <span id="description">Description</span></div>
-    </div>
-    <div id="team_members">
-      <div id="team_member_1">
-        <a href="/project/team/11222">Team member</a>
+<div style="height: 100vh">
+  <nav class="navbar navbar-dark bg-dark header-company">
+    <a class="navbar-brand company-name"> Company name </a>
+  </nav>
+  <div class="company-site-container">
+    <div class="body">
+      <div class="shadow p-3 mb-5 bg-white">
+        <div class="main_info">
+          <div class="row property-text-block">
+            <div class="col-md-6">
+              <span class="property-text">Project name:</span>
+              <span id="project_name">{{ projectDescription.name }}</span>
+            </div>
+            <div class="col-md-6">
+              <span class="property-text">Domain:</span
+              ><span id="domain">{{ projectDescription.domain }}</span>
+            </div>
+          </div>
+          <div class="row property-text-block">
+            <div class="col-md-6">
+              <span class="property-text">Project manager:</span
+              ><span id="project_manager">{{
+                projectDescription.projectManager
+              }}</span>
+            </div>
+            <div class="col-md-6">
+              <span class="property-text">Team lead:</span
+              ><span id="team_lead">{{ projectDescription.teamLead }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+          <div class="shadow p-3 mb-5 bg-white">
+            <div class="detailed_info">
+              <div style="margin-bottom: 0.5rem">
+                <span class="property-text">Main technology:</span
+                ><span id="main_technology">{{
+                  projectDescription.mainTechnology
+                }}</span>
+              </div>
+              <div class="technology-text-block">
+                <span class="property-text">Additional technologies:</span
+                ><span id="additional_technologies">
+                  <ul>
+                    <li
+                      *ngFor="
+                        let technology of projectDescription.additionalTechnologies
+                      "
+                    >
+                      {{ technology }}
+                    </li>
+                  </ul>
+                </span>
+              </div>
+              <div>
+                <span class="property-text">Description</span>
+                <div class="w-100"></div>
+                <div id="description" class="description-text-block">
+                  {{ projectDescription.description }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="shadow p-3 mb-5 bg-white">
+            <div id="team_members">
+              <span class="property-text">Team members</span>
+              <div class="parent">
+                <div
+                  *ngFor="let member of projectDescription.teamMembers"
+                  class="child"
+                >
+                  <a [href]="'/project/team/' + member.id">
+                    <img style="height: 40px;" src="/assets/circle.svg" [alt]="member.fullName">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
