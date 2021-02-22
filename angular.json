@@ -117,8 +117,13 @@
               "devServerTarget": "mock-company-site:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "mock-company-site"
 }
